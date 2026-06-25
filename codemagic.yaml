@@ -12,11 +12,6 @@ workflows:
       - name: Generate Gradle wrapper
         script: |
           gradle wrapper --gradle-version=9.3.1
-      - name: Decode keystore
-        script: |
-          if [ -f "debug.keystore.base64" ]; then
-            base64 -d debug.keystore.base64 > debug.keystore || base64 -D debug.keystore.base64 > debug.keystore || echo "Decode failed"
-          fi
       - name: Make Gradle executable
         script: |
           chmod +x gradlew
