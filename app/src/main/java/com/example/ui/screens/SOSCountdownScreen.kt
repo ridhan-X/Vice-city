@@ -1,5 +1,8 @@
 package com.example.ui.screens
 
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.platform.LocalContext
+import android.media.MediaPlayer
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
@@ -25,6 +28,29 @@ fun SOSCountdownScreen(
     val t = LocalAppColors.current
     val accentColor = if (isTest) t.blue else t.red
     
+    val context = LocalContext.current
+
+    DisposableEffect(Unit) {
+        var mediaPlayer: MediaPlayer? = null
+        try {
+            val resId = context.resources.getIdentifier("sos_sound", "raw", context.packageName)
+            if (resId != 0) {
+                mediaPlayer = MediaPlayer.create(context, resId)
+                if (mediaPlayer != null) {
+                    mediaPlayer.isLooping = true // The user wants it to play 2 times total (13s + 13s = 26s, the screen lasts 27s). Looping it will ensure it plays continuously until the countdown is stopped or finished.
+                    mediaPlayer.start()
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        onDispose {
+            mediaPlayer?.stop()
+            mediaPlayer?.release()
+        }
+    }
+
     val mins = (timeLeft / 60).toString().padStart(2, '0')
     val secs = (timeLeft % 60).toString().padStart(2, '0')
 
