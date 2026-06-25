@@ -1,0 +1,33 @@
+package com.example.ui.theme
+
+import androidx.compose.ui.graphics.Color
+
+val DarkBg = Color(0xFF000000)
+val DarkSurface = Color(0xFF0A0A0A)
+val DarkCard = Color(0xFF111111)
+val DarkCardHover = Color(0xFF181818)
+val DarkBorder = Color(0xFF1E1E1E)
+val DarkBorderStrong = Color(0xFF2A2A2A)
+val DarkRed = Color(0xFFE53935)
+val DarkRedDim = Color(0xFFB71C1C)
+val DarkGreen = Color(0xFF4CAF50)
+val DarkText1 = Color(0xFFFFFFFF)
+val DarkText2 = Color(0xFF9E9E9E)
+val DarkText3 = Color(0xFF3A3A3A)
+val DarkBlue = Color(0xFF42A5F5)
+val DarkInputBg = Color(0xFF0D0D0D)
+
+val DayBg = Color(0xFFF5F5F7)
+val DaySurface = Color(0xFFFFFFFF)
+val DayCard = Color(0xFFFFFFFF)
+val DayCardHover = Color(0xFFF0F0F2)
+val DayBorder = Color(0xFFE8E8EC)
+val DayBorderStrong = Color(0xFFD0D0D6)
+val DayRed = Color(0xFFD32F2F)
+val DayRedDim = Color(0xFFB71C1C)
+val DayGreen = Color(0xFF2E7D32)
+val DayText1 = Color(0xFF111111)
+val DayText2 = Color(0xFF666666)
+val DayText3 = Color(0xFFBBBBBB)
+val DayBlue = Color(0xFF1565C0)
+val DayInputBg = Color(0xFFF5F5F7)
